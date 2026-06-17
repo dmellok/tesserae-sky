@@ -20,4 +20,4 @@ If you had the v0.1.x sky bundle installed, the v0.2.0 update drops the `sky_air
 
 ## License
 
-MIT. See [LICENSE](./LICENSE).
+AGPL-3.0-or-later. See [LICENSE](./LICENSE).
