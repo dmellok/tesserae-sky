@@ -120,6 +120,13 @@ def fetch(
             # (phase, rise/set, etc.) is stable within the TTL.
             if isinstance(cached.get("sun"), dict):
                 cached["sun"]["nowMin"] = _now_min()
+            # ``label`` and the duplicate ``place`` are UI strings from
+            # the cell editor, not part of the upstream API response.
+            # Overlay both on cache hit so a rename on the same
+            # coordinates shows up on the next preview instead of
+            # waiting for the TTL.
+            cached["label"] = label
+            cached["place"] = label
             return cached
         except (json.JSONDecodeError, OSError):
             pass
